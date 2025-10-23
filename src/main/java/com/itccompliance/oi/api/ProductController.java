@@ -36,7 +36,7 @@ public class ProductController {
     }
 
     @GetMapping("/low-stock")
-    public ResponseEntity<List<Product>> lowStock(@RequestParam int threshold) {
+    public ResponseEntity<List<Product>> lowStock(@RequestParam("threshold") int threshold) {
         return ResponseEntity.ok(repo.findByAvailableQuantityLessThan(threshold));
     }
 }
